@@ -1,3 +1,3 @@
 paintplot
 =========
-paintplot description.
+http://www.paintplot.com
