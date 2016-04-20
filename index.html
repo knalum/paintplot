@@ -1,0 +1,232 @@
+<!doctype HTML>
+<html>
+
+<head>
+	<meta name="Description" CONTENT="PaintPlot. Plot functions, draw plots with the mousepointer, import/export data series, interactive zoom.">
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta name="keywords" content="plotter,graph,chart,function,online,free,math,plot,grapher,sketch,draw,versatile">
+	<meta content="utf-8" http-equiv="encoding">
+
+	<title>paintplot.com - Online plotter and graphing tool - Create graphs and charts online.</title>
+	<script src="dygraph-combined.js"></script>
+  	<script src="jquery-2.1.1.min.js"></script>
+  	<script type="text/javascript" src="dist/math.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+
+	<script src="jQuery.bPopup.js"></script>
+	<script src="jquery.mousewheel.min.js"></script>
+	
+	<script src="dygraph-extra.js"></script>
+	<script src="myGraph.js"></script>
+
+	<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54018970-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+</head>
+<body>
+
+<!-- FACEBOOK SCRIPTS -->
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/nb_NO/sdk.js#xfbml=1&appId=1459903660935325&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- END FACEBOOK SCRIPTS -->
+
+
+
+
+<div class="panel-heading">
+    <span class="panelTitle"><a href=".">paintplot.com - Online plotter and graphing tool</a></span>
+
+
+
+    <span class="aboutText"><a href="#">About</a></span>
+    <span class="helpText"><a href="#">Help</a></span>
+    <span class="aboutText">
+    	<div class="fb-share-button" width="100" data-href="http://www.paintplot.com"></div>
+    </span> 
+</div>
+
+
+
+<div id="popup">
+	<p>
+    This application is built using:
+    <ul>
+    	<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+    	<li><a href="http://dygraphs.com" target="_blank">dygraphs</a></li>
+    	<li><a href="http://mathjs.org/" target="_blank">math.js</a></li>
+    	<li><a href="http://dinbror.dk/blog/bPopup/" target="_blank">bPopup</a></li>
+    </ul>
+    </p>
+    <p>
+    	<a href="knalum[at]gmail[dot]com">Contact webmaster</a>
+    </p>
+    <p>
+    PaintPlot.com v1.2 2014
+	</p>
+</div>
+
+<div id="helpPopup">
+	
+
+	<table id="helpTable">
+		<tr>
+			<td>Draw</td>
+		 	<td>Mouse click on the plot to draw</td>
+		</tr>
+		<tr>
+			<td>Pan</td>
+			<td>Hold SHIFT and mouse drag inside the chart area</td>
+		</tr>
+		<tr>
+			<td>Zoom</td>
+			<td>Use scroll wheel inside chart area</td>
+		</tr>
+	</table>
+
+	
+</div>
+
+<br/>
+<div id="infoPanel">
+	<h1>paintplot is a free online graphing application for drawing data series and plotting math functions.</h1>
+</div>
+
+<div id="rTest" class="ui-widget-content">
+	<div id="draw_div" ></div>
+</div>
+
+<div id="informationPanel"></div>
+
+<div id="configurationPanel" >
+
+	<div>
+		<label>y<sub>min</sub></label>
+		<input class="range_yMin spinner" value="-10" autocomplete="off">
+		
+		<label>y<sub>max</sub></label>
+		<input class="range_yMax spinner"  value="10" autocomplete="off">
+
+		<label>x<sub>min</sub></label>
+		<input class="range_xMin spinner" value="-50" autocomplete="off">
+		
+		<label>x<sub>max</sub></label>
+		<input class="range_xMax spinner"  value="50" autocomplete="off">
+
+	</div>
+	<br/>
+	<div>	
+
+		<label>x<sub>start</sub></label>
+		<input class="start_x spinner"  value="-50" autocomplete="off">
+
+		<label>x<sub>end</sub> </label>
+		<input class="end_x spinner"  value="50" autocomplete="off">
+	</div>
+
+	<div>
+		<select id="separatorList" name="separatorList">
+			<option value="csv">CSV</option>
+			<option value="tsv">TSV</option>
+			<option value="space">Space</option>
+			<option value="semicolon">Semi colon</option>
+			<option value="colon">Colon</option>
+			<option value="userDefined">User defined</option>
+		</select>
+
+		<input type="text" id="userDefinedSeparator">
+
+		<select id="lineType" name="lineType">
+			<option value="line">Line</option>
+			<option value="stair">Stair</option>
+		</select>
+
+
+		<button type="button" id="autoscaleButton" class="button">Autoscale</button>
+
+		<button type="button" id="resetDataButton" value="Reset data" class="button">Reset data</button>
+	</div>
+
+	<div>
+
+		<label><span id="userDefinedFunctionLink"><a href="#">User defined function</a></span></label>
+
+		<input type='text' id='userDefinedFunction' autocomplete="off" placeholder="f(x)">
+
+	</div>
+	<div>
+
+		<button type="button" id="imageButton" value="Get image" class="button">Get image</button>
+
+		<button type="button" id="dataButton" value="Get data" class="button">Export data</button>
+
+	<button type="button" id="importDataButton" value="Import data" class="button">Import data</button>
+	</div>
+
+
+</div>
+
+
+
+<div id="userDefinedFunctionPopup">
+  		<p>
+        	Accepts valid math functions as defined in <a href="http://mathjs.org/" target="_blank">math.js</a>
+    	</p>
+    	<p>Examples:
+	    	<table id="functionTable">
+	    		<tr>
+	    			<td class="functionExample">x</td>
+	    		</tr>
+	    		<tr>
+	    			<td class="functionExample">abs(x)</td>
+	    		</tr>
+	    		<tr>
+	    			<td class="functionExample">x^3-4*x^2+20*x-9</td>
+	    		</tr>
+	    		<tr>
+	    			<td class="functionExample">sin(0.1*x)*cos(0.1*x)</td>
+	    		</tr>
+	    		<tr>
+	    			<td class="functionExample">2*e^(0.1*x)</td>
+	    		</tr>
+	    		<tr>
+	    			<td class="functionExample">rand(x)</td>
+	    		</tr>
+	    		<tr>
+	    			<td class="functionExample">rand(x)*sin(0.1*x)</td>
+	    		</tr>
+	    	</table>
+
+    	</p>
+	</div>
+
+
+<div id="dataDiv">
+</div>
+
+
+</body>
+</html>

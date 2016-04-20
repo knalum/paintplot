@@ -1,0 +1,255 @@
+#tool_zoom { background-image: url(http://dygraphs.com/gallery/images/tool-palette.png); width: 32px; height: 33px; margin-left: 50px; display: inline-block; background-position: 0px 0px; background-repeat: initial initial; }
+
+#tool_pencil { background-image: url(http://dygraphs.com/gallery/images/tool-palette.png); width: 32px; height: 33px; display: inline-block; background-position: -32px 0px; background-repeat: initial initial; }
+
+#tool_eraser { background-image: url(http://dygraphs.com/gallery/images/tool-palette.png); width: 33px; height: 33px; display: inline-block; background-position: -64px 0px; background-repeat: initial initial; }
+
+.panel-heading{
+	height: 35px;
+	background-color: rgba(100,100,100,0.3);
+	border-bottom:1px solid rgba(100,100,100,1);
+	text-align: center;
+
+
+}
+
+.panelTitle{
+	font-size: 25px;
+	font-weight: 300;
+	font-family: 'Gloria Hallelujah', cursive;
+	margin-left: 120px;
+}
+
+
+.aboutText, .helpText{
+	float:right;
+	margin-top:15px;
+	font-size: 10px;
+	padding-left: 10px;
+}
+
+#infoPanel{
+	border: 1px solid black;
+	background-color: rgba(100,100,100,0.3);
+	width: 600px;
+	margin: auto;
+	font-family: "Helvetica";
+	font-size: 100%;
+	text-align: center;
+	
+}
+
+
+h1{
+	font-size: 80%;
+	font-weight: 100;
+}
+
+
+#draw_div{
+	width: 800px;
+	height: 400px;
+	margin: auto;
+	margin-top:50px;
+	cursor: crosshair;
+}
+
+
+#rTest{
+	margin-top:30px;
+	width: 800px;
+	height: 450px;
+	background: none;
+	margin-left: auto;
+	margin-right: auto;
+	border: none;
+}
+
+
+#dataField{
+	height: 300px;
+	width: 600px;
+	overflow: auto;
+	
+	font-family: "courier";
+	font-size: 10px;
+
+}
+
+#dataDiv{
+	width: 100%;
+	text-align: center;
+}
+
+
+#configurationPanel{
+	margin: auto;
+	width: 800px;
+	text-align: center;
+}
+
+body{
+	height: 100%;
+	width: 100%;
+	font-family: "Arial";
+	font-weight: 100;
+	color: rgba(0,0,0,1);
+	margin: 0px;
+	background-color: rgba(255,255,255,1);
+}
+
+
+
+#userDefinedSeparator{
+	visibility: hidden;
+	width: 30px;
+}
+
+input, label{
+	padding: 20px;
+}
+
+
+.rangeField{
+	width: 100px;
+	height: 25px;
+	font-size: 15px;
+}
+
+#userDefinedFunction{
+	width: 500px;
+	height: 25px;
+	font-size: 15px;
+}
+
+
+input[type=text] {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+  	background: white;
+	font-family: "Helvetica";
+
+}
+ 
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.spinner{
+	width: 90px;
+}
+
+.ui-widget {
+    font-size:90% !important;
+}
+
+
+.button { 
+  color: #ffffff; 
+  background-color: #B3B3B3; 
+  border-color: #FFFFFF; 
+  font-size: 15px;
+} 
+ 
+.button:hover, 
+.button:focus, 
+.button:active, 
+.button.active, 
+.open .dropdown-toggle.button { 
+  color: #ffffff; 
+  background-color: #BABABA; 
+  border-color: #FFFFFF; 
+} 
+ 
+.button:active, 
+.button.active, 
+.open .dropdown-toggle.button { 
+  background-image: none; 
+} 
+ 
+.button.disabled, 
+.button[disabled], 
+fieldset[disabled] .button, 
+.button.disabled:hover, 
+.button[disabled]:hover, 
+fieldset[disabled] .button:hover, 
+.button.disabled:focus, 
+.button[disabled]:focus, 
+fieldset[disabled] .button:focus, 
+.button.disabled:active, 
+.button[disabled]:active, 
+fieldset[disabled] .button:active, 
+.button.disabled.active, 
+.button[disabled].active, 
+fieldset[disabled] .button.active { 
+  background-color: #B3B3B3; 
+  border-color: #FFFFFF; 
+} 
+ 
+.button .badge { 
+  color: #B3B3B3; 
+  background-color: #ffffff; 
+}
+
+a{
+	text-decoration: none;
+	color: rgba(0, 0, 255, 1);
+}
+
+a:hover{
+	text-decoration: none;
+	color: rgba(0,0,0,0.7);
+}
+
+ #popup, #userDefinedFunctionPopup, #helpPopup { 
+ 	display:none; 
+    background-color: #FFF;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 25px 5px #999;
+    color: #111;
+    display: none;
+    min-width: 450px;
+    min-height: 250px;
+    padding: 25px;
+    text-align: center;
+}
+
+ul{
+	list-style: none;
+}
+
+li{
+	padding: 5px;
+}
+
+table,#functionTable{
+	margin: auto;
+}
+
+td{
+	text-align: center;
+	border: 1px dotted rgba(0,0,0,0.2);
+	padding: 10px;
+}
+
+td:hover{
+	background: rgba(200,200,200,0.2);
+	cursor: pointer;
+}
+
+#informationPanel{
+	margin: auto;
+	height: 30px;
+	width: 600px;
+	text-align: center;
+	color: #D8000C;
+}
