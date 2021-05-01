@@ -656,9 +656,8 @@ $(document).ready(function () {
   function plotUserDefinedFunction(){
     $("#userDefinedFunction").css('background-color', 'white');
 
-    math = mathjs();
-
     var functionInput = $("#userDefinedFunction").val();
+    console.log(functionInput)
 
     var start_x = parseInt($(".start_x").val());
     var end_x = parseInt($(".end_x").val());
@@ -682,7 +681,7 @@ $(document).ready(function () {
 
 
     try{
-      var f_x = math.eval(functionInputReplaced);
+      var f_x = math.evaluate(functionInputReplaced);
     }
     catch(e){
       console.log(e);
