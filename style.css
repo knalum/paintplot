@@ -9,15 +9,17 @@
 	background-color: rgba(100,100,100,0.3);
 	border-bottom:1px solid rgba(100,100,100,1);
 	text-align: center;
+	padding-right: 10px;
+	padding-right: 10px;
 
 
 }
 
 .panelTitle{
 	font-size: 25px;
-	font-weight: 300;
-	font-family: 'Gloria Hallelujah', cursive;
+	font-weight: bolder;
 	margin-left: 120px;
+	font-family: "Arial Black";
 }
 
 
