@@ -67,7 +67,7 @@ h1{
 }
 
 
-#dataField{
+#exportDataField,#dataField{
 	height: 300px;
 	width: 600px;
 	overflow: auto;

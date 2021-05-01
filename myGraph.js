@@ -190,11 +190,6 @@ $(document).ready(function () {
 
   }
 
-  function pan(event){
-    console.log(event);
-    
-  }
-
 
   function zoom(g, zoomInPercentage, xBias, yBias) {
   xBias = xBias || 0.5;
@@ -347,7 +342,7 @@ $(document).ready(function () {
 
 
   function getData(){
-    $("#dataDiv").html("<textarea id='dataField'></textarea>");
+    $("#dataDiv").html("<textarea id='exportDataField'></textarea>");
     $("#dataField").text("");
 
     var str = "";
@@ -374,7 +369,7 @@ $(document).ready(function () {
       str += data[i][0]+separator+data[i][1]+"\n";
     }
 
-    $("#dataField").html(str);
+    $("#exportDataField").html(str);
   }
 
 
@@ -636,7 +631,6 @@ $(document).ready(function () {
     var range_xMin = parseInt($(".range_xMin").val());
     var range_xMax = parseInt($(".range_xMax").val());
 
-    console.log(range_xMin+" , "+range_xMax);
 
     myGraph.updateOptions({
     "file":data2,
@@ -657,7 +651,6 @@ $(document).ready(function () {
     $("#userDefinedFunction").css('background-color', 'white');
 
     var functionInput = $("#userDefinedFunction").val();
-    console.log(functionInput)
 
     var start_x = parseInt($(".start_x").val());
     var end_x = parseInt($(".end_x").val());
@@ -684,7 +677,6 @@ $(document).ready(function () {
       var f_x = math.evaluate(functionInputReplaced);
     }
     catch(e){
-      console.log(e);
       $("#userDefinedFunction").css('background-color', ERROR_COLOR);
       displayErrorMessage("Syntax error in user defined function");
       break;
@@ -698,6 +690,9 @@ $(document).ready(function () {
     }
   }
 
+  $(document).on("change","#dataField",function(e){
+    $("#importDataButton").click()
+  })
 
 
   $(document).on("click","#importDataButton",function(){
@@ -885,7 +880,6 @@ $(document).ready(function () {
 
     $(".functionExample").click(function(){
       var functionString = $(this).html();
-      console.log(functionString);
 
       $("#userDefinedFunction").val(functionString);
       $("#userDefinedFunctionPopup").bPopup().close();
@@ -913,7 +907,6 @@ $(document).ready(function () {
       var deltaY = event.deltaY;
 
       var speedFactor = 1;
-      console.log(event);
 
       if( event.ctrlKey ){
 
