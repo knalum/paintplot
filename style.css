@@ -56,7 +56,6 @@ h1{
 
 
 #rTest{
-	margin-top:30px;
 	width: 800px;
 	height: 450px;
 	background: none;
@@ -252,4 +251,9 @@ td:hover{
 	width: 600px;
 	text-align: center;
 	color: #D8000C;
+}
+
+#topBanner{
+	font-size: 0.8rem;
+	text-align: center;
 }

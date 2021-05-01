@@ -1,6 +1,6 @@
 paintplot
 =========
-http://www.paintplot.com
+http://www.touchplot.com
 
 Useful tool for generating graphs from functions and drawing/editing them with mouse pointer. Export/import data in a range or formats.
 
